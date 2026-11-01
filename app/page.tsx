@@ -74,7 +74,7 @@ export default function Home() {
 
           <div className="absolute bottom-8 left-5 right-5 grid gap-2 sm:bottom-10 sm:left-8 sm:right-8 sm:grid-cols-4 lg:left-12 lg:right-12">
             {[
-              ["01", "Materials", "#materials", "/images/materials-alabaster.png"],
+              ["01", "Materials", "/materials", "/images/materials-alabaster.png"],
               ["02", "Collections", "/collections", "/images/collection-forms.png"],
               ["03", "Process", "/process", "/images/process-cutting.png"],
               ["04", "Contact", "/contact", "/images/contact-reception.png"],

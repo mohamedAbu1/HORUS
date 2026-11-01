@@ -10,7 +10,7 @@ const navItems: Array<{ label: string; key: SiteSection; href: string }> = [
   { label: "ABOUT", key: "about", href: "/#about" },
   { label: "COLLECTIONS", key: "collections", href: "/collections" },
   { label: "PROCESS", key: "process", href: "/process" },
-  { label: "MATERIALS", key: "materials", href: "/#materials" },
+  { label: "MATERIALS", key: "materials", href: "/materials" },
   { label: "CONTACT", key: "contact", href: "/contact" },
 ];
 
