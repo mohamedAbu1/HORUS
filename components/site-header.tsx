@@ -7,7 +7,6 @@ export type SiteSection = "home" | "about" | "collections" | "process" | "materi
 
 const navItems: Array<{ label: string; key: SiteSection; href: string }> = [
   { label: "HOME", key: "home", href: "/" },
-  { label: "ABOUT", key: "about", href: "/#about" },
   { label: "COLLECTIONS", key: "collections", href: "/collections" },
   { label: "PROCESS", key: "process", href: "/process" },
   { label: "MATERIALS", key: "materials", href: "/materials" },
