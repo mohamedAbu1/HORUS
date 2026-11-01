@@ -77,7 +77,7 @@ export default function Home() {
               ["01", "Materials", "#materials", "/images/materials-alabaster.png"],
               ["02", "Collections", "/collections", "/images/collection-forms.png"],
               ["03", "Process", "/process", "/images/process-cutting.png"],
-              ["04", "Contact", "#contact", "/images/contact-reception.png"],
+              ["04", "Contact", "/contact", "/images/contact-reception.png"],
             ].map(([number, label, href, image]) => (
               <a href={href} key={label} className="group relative h-[112px] overflow-hidden rounded-[3px] border border-white/20 bg-[#211a14]/70 p-4 sm:h-[132px]">
                 <Image src={image} alt="" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-80" />
@@ -146,7 +146,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <a href="#contact" className="mt-10 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#e0bd89] transition hover:text-white">Request a material consultation <ArrowRight size={15} /></a>
+              <a href="/contact" className="mt-10 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#e0bd89] transition hover:text-white">Request a material consultation <ArrowRight size={15} /></a>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function Home() {
             <span className="text-[10px] uppercase tracking-[0.22em] text-white/35">Objects / 2026</span>
           </div>
           <div className="grid gap-3 md:grid-cols-[1.35fr_.65fr]">
-            <a href="#contact" className="group relative min-h-[520px] overflow-hidden rounded-[3px] border border-white/10 bg-[#201810]">
+            <a href="/contact" className="group relative min-h-[520px] overflow-hidden rounded-[3px] border border-white/10 bg-[#201810]">
               <Image src="/images/collection-forms.png" alt="Sculptural alabaster collection" fill sizes="(max-width: 768px) 100vw, 67vw" className="object-cover transition duration-1000 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080706]/90 via-transparent to-transparent" />
               <div className="absolute bottom-7 left-7 right-7 flex items-end justify-between">
@@ -175,7 +175,7 @@ export default function Home() {
                 <span className="text-[10px] uppercase tracking-[0.22em] text-[#caa56d]">Signature</span>
                 <div><p className="font-serif text-3xl leading-tight text-[#f3e1c3]">Designed to catch the last light.</p><p className="mt-4 text-sm leading-6 text-white/45">Sculptural objects for rooms that value atmosphere over noise.</p></div>
               </div>
-              <a href="#contact" className="group relative min-h-[250px] overflow-hidden border border-white/10 bg-[#17120e] p-7">
+              <a href="/contact" className="group relative min-h-[250px] overflow-hidden border border-white/10 bg-[#17120e] p-7">
                 <Image src="/images/process-cutting.png" alt="Horus stone cutting process" fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover opacity-45 transition duration-700 group-hover:scale-105 group-hover:opacity-65" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b0a08] to-transparent" />
                 <div className="relative flex h-full flex-col justify-between"><span className="text-[10px] uppercase tracking-[0.22em] text-[#caa56d]">Made by hand</span><div className="flex items-end justify-between"><span className="font-serif text-3xl text-[#f3e1c3]">From block to heirloom</span><CircleArrow /></div></div>

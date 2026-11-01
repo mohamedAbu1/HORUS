@@ -12,7 +12,7 @@ const navItems: Array<{ label: string; key: SiteSection; href: string }> = [
   { label: "COLLECTIONS", key: "collections", href: "/collections" },
   { label: "PROCESS", key: "process", href: "/process" },
   { label: "MATERIALS", key: "materials", href: "/#materials" },
-  { label: "CONTACT", key: "contact", href: "/#contact" },
+  { label: "CONTACT", key: "contact", href: "/contact" },
 ];
 
 export function SiteHeader({ active = "home" }: { active?: SiteSection }) {
@@ -43,7 +43,7 @@ export function SiteHeader({ active = "home" }: { active?: SiteSection }) {
           <button type="button" className="site-search-button" onClick={() => setSearchOpen((value) => !value)} aria-label="Toggle search">
             <Search size={18} strokeWidth={1.25} />
           </button>
-          <Link href="/#contact" className="site-contact-dot" aria-label="Open contact section"><span>o</span></Link>
+          <Link href="/contact" className="site-contact-dot" aria-label="Open contact page"><span>o</span></Link>
           <button type="button" className="site-menu-button" onClick={() => setMenuOpen((value) => !value)} aria-label="Toggle menu">
             {menuOpen ? <X size={20} strokeWidth={1.2} /> : <Menu size={20} strokeWidth={1.2} />}
           </button>
