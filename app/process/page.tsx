@@ -13,7 +13,7 @@ const steps = [
 
 export default function ProcessPage() {
   return (
-    <main className="process-page">
+    <main id="top" className="process-page">
       <SiteHeader active="process" />
 
       <section className="process-hero">

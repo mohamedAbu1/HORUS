@@ -25,7 +25,7 @@ const collections = [
 
 export default function CollectionsPage() {
   return (
-    <main className="collections-page">
+    <main id="top" className="collections-page">
       <SiteHeader active="collections" />
 
       <section className="collections-content">
