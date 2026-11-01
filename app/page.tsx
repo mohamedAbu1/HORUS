@@ -9,17 +9,9 @@ import {
   AtSign,
   Check,
   Mail,
-  Menu,
-  Search,
-  X,
 } from "lucide-react";
-
-const navItems = [
-  { label: "Materials", href: "#materials" },
-  { label: "Collections", href: "/collections" },
-  { label: "Process", href: "/process" },
-  { label: "Contact", href: "#contact" },
-];
+import { SiteFooter } from "../components/site-footer";
+import { SiteHeader } from "../components/site-header";
 
 const materialNotes = [
   ["01", "Alabaster", "Warm translucency, naturally veined"],
@@ -52,8 +44,6 @@ function CircleArrow({ direction = "up" }: { direction?: "up" | "down" }) {
 }
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -63,61 +53,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#0b0a08] text-[#f7f0e7] selection:bg-[#caa56d] selection:text-[#1c1610]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0b0a08]/70 backdrop-blur-xl">
-        <div className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
-          <a href="#top" className="group flex items-center gap-3" aria-label="Horus home">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#caa56d]/60 text-[#caa56d] transition group-hover:bg-[#caa56d] group-hover:text-[#17120d]">
-              <span className="font-serif text-sm">H</span>
-            </span>
-            <span className="leading-none">
-              <span className="block font-serif text-[21px] tracking-[0.28em] text-[#f3dfbf]">HORUS</span>
-              <span className="mt-1 block text-[7px] font-medium uppercase tracking-[0.42em] text-white/55">Alabaster atelier</span>
-            </span>
-          </a>
-
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
-            {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="nav-link text-[11px] uppercase tracking-[0.18em] text-white/70 transition hover:text-[#e7c38f]">
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-2 sm:gap-3">
-            <a href="#contact" className="hidden rounded-full border border-[#caa56d]/70 px-5 py-3 text-[10px] uppercase tracking-[0.18em] text-[#ead0a4] transition hover:bg-[#caa56d] hover:text-[#1c1610] sm:inline-flex">
-              Request a quote
-            </a>
-            <button type="button" onClick={() => setSearchOpen((value) => !value)} className="icon-button" aria-label="Toggle search">
-              <Search size={17} strokeWidth={1.5} />
-            </button>
-            <button type="button" onClick={() => setMenuOpen((value) => !value)} className="icon-button lg:hidden" aria-label="Toggle navigation">
-              {menuOpen ? <X size={19} strokeWidth={1.5} /> : <Menu size={19} strokeWidth={1.5} />}
-            </button>
-          </div>
-        </div>
-
-        {searchOpen && (
-          <div className="border-t border-white/10 bg-[#15110d]/95 px-5 py-4">
-            <div className="mx-auto flex max-w-2xl items-center gap-3 rounded-full border border-white/15 bg-white/5 px-5 py-3">
-              <Search size={15} className="text-[#caa56d]" />
-              <input autoFocus type="search" placeholder="Search the atelier" className="w-full bg-transparent text-sm text-white outline-none placeholder:text-white/35" />
-              <span className="text-[9px] uppercase tracking-[0.2em] text-white/30">Esc</span>
-            </div>
-          </div>
-        )}
-
-        {menuOpen && (
-          <div className="border-t border-white/10 bg-[#11100d] px-5 py-6 lg:hidden">
-            <nav className="mx-auto flex max-w-xl flex-col" aria-label="Mobile navigation">
-              {navItems.map((item) => (
-                <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="border-b border-white/10 py-4 font-serif text-2xl text-white/90">
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-        )}
-      </header>
+      <SiteHeader active="home" />
 
       <section id="top" className="relative isolate min-h-[760px] overflow-hidden pt-[78px] lg:min-h-screen">
         <Image src="/images/hero-atelier.png" alt="A luminous alabaster installation in the Horus atelier" fill priority sizes="100vw" className="object-cover object-center" />
@@ -159,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#0f0d0b] px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
+      <section id="about" className="scroll-mt-24 border-y border-white/10 bg-[#0f0d0b] px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
         <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-28">
           <div>
             <SectionKicker>Our point of view</SectionKicker>
@@ -269,9 +205,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 bg-[#0b0a08] px-5 py-9 sm:px-8 lg:px-12">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-5 text-[10px] uppercase tracking-[0.18em] text-white/35 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Horus Alabaster Atelier</span><span>Made for spaces that glow</span><a href="#top" className="text-[#caa56d] transition hover:text-white">Back to top ↑</a></div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
