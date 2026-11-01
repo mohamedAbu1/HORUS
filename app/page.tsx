@@ -66,7 +66,7 @@ export default function Home() {
             <h1 className="max-w-3xl font-serif text-[clamp(4.5rem,11vw,10.75rem)] leading-[0.78] tracking-[-0.055em] text-[#f6e5ca]">HORUS</h1>
             <p className="mt-8 max-w-md font-serif text-2xl leading-tight text-white/82 sm:text-3xl">Material, illuminated.</p>
             <p className="mt-5 max-w-md text-sm leading-7 text-white/58">We shape the quiet drama of natural stone into spaces, objects, and light that stay with you.</p>
-            <a href="#collections" className="group mt-9 inline-flex items-center gap-6 rounded-full bg-[#caa56d] px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#1e170f] transition hover:bg-[#e6c38f]">
+            <a href="/collections" className="group mt-9 inline-flex items-center gap-6 rounded-full bg-[#caa56d] px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#1e170f] transition hover:bg-[#e6c38f]">
               Explore collections
               <ArrowRight size={16} className="transition group-hover:translate-x-1" />
             </a>
@@ -75,8 +75,8 @@ export default function Home() {
           <div className="absolute bottom-8 left-5 right-5 grid gap-2 sm:bottom-10 sm:left-8 sm:right-8 sm:grid-cols-4 lg:left-12 lg:right-12">
             {[
               ["01", "Materials", "#materials", "/images/materials-alabaster.png"],
-              ["02", "Collections", "#collections", "/images/collection-forms.png"],
-              ["03", "Process", "#process", "/images/process-cutting.png"],
+              ["02", "Collections", "/collections", "/images/collection-forms.png"],
+              ["03", "Process", "/process", "/images/process-cutting.png"],
               ["04", "Contact", "#contact", "/images/contact-reception.png"],
             ].map(([number, label, href, image]) => (
               <a href={href} key={label} className="group relative h-[112px] overflow-hidden rounded-[3px] border border-white/20 bg-[#211a14]/70 p-4 sm:h-[132px]">
