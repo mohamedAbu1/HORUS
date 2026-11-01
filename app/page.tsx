@@ -56,11 +56,14 @@ export default function Home() {
       <SiteHeader active="home" />
 
       <section id="top" className="relative isolate min-h-[760px] overflow-hidden pt-[78px] lg:min-h-screen">
-        <Image src="/images/hero-atelier.png" alt="A luminous alabaster installation in the Horus atelier" fill priority sizes="100vw" className="object-cover object-center" />
+        <Image src="/images/hero-atelier-background.png" alt="The dark Horus alabaster atelier" fill priority sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 -z-0 bg-[linear-gradient(90deg,rgba(7,6,5,.94)_0%,rgba(7,6,5,.7)_33%,rgba(7,6,5,.15)_68%,rgba(7,6,5,.5)_100%)]" />
+        <div className="hero-monolith-wrap" aria-hidden="true">
+          <Image src="/images/hero-monolith-cutout.png" alt="" fill sizes="(max-width: 640px) 92vw, 60vw" className="hero-monolith-overlay" />
+        </div>
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0b0a08] to-transparent" />
 
-        <div className="relative z-10 mx-auto flex min-h-[680px] max-w-[1440px] flex-col justify-center px-5 pb-44 pt-24 sm:px-8 lg:min-h-[calc(100vh-78px)] lg:px-12">
+        <div className="hero-copy-layer relative z-40 mx-auto flex min-h-[680px] max-w-[1440px] flex-col justify-center px-5 pb-44 pt-24 sm:px-8 lg:min-h-[calc(100vh-78px)] lg:px-12">
           <div className="max-w-[690px]">
             <p className="mb-8 text-[10px] font-semibold uppercase tracking-[0.42em] text-[#d5ad72]">Light, carved into stone.</p>
             <h1 className="max-w-3xl font-serif text-[clamp(4.5rem,11vw,10.75rem)] leading-[0.78] tracking-[-0.055em] text-[#f6e5ca]">HORUS</h1>
@@ -72,26 +75,27 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="absolute bottom-8 left-5 right-5 grid gap-2 sm:bottom-10 sm:left-8 sm:right-8 sm:grid-cols-4 lg:left-12 lg:right-12">
-            {[
-              ["01", "Materials", "/materials", "/images/materials-alabaster.png"],
-              ["02", "Collections", "/collections", "/images/collection-forms.png"],
-              ["03", "Process", "/process", "/images/process-cutting.png"],
-              ["04", "Contact", "/contact", "/images/contact-reception.png"],
-            ].map(([number, label, href, image]) => (
-              <a href={href} key={label} className="group relative h-[112px] overflow-hidden rounded-[3px] border border-white/20 bg-[#211a14]/70 p-4 sm:h-[132px]">
-                <Image src={image} alt="" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0a08] via-[#0b0a08]/20 to-transparent" />
-                <div className="relative flex h-full flex-col justify-between">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-white/45">{number}</span>
-                  <div className="flex items-end justify-between gap-2">
-                    <span className="font-serif text-xl text-[#f3e4cc] sm:text-2xl">{label}</span>
-                    <CircleArrow />
-                  </div>
+        </div>
+
+        <div className="hero-card-grid absolute bottom-8 left-5 right-5 grid gap-2 sm:bottom-10 sm:left-8 sm:right-8 sm:grid-cols-4 lg:left-12 lg:right-12">
+          {[
+            ["01", "Materials", "/materials", "/images/materials-alabaster.png"],
+            ["02", "Collections", "/collections", "/images/collection-forms.png"],
+            ["03", "Process", "/process", "/images/process-cutting.png"],
+            ["04", "Contact", "/contact", "/images/contact-reception.png"],
+          ].map(([number, label, href, image]) => (
+            <a href={href} key={label} className="group relative h-[112px] overflow-hidden rounded-[3px] border border-white/20 bg-[#211a14]/70 p-4 sm:h-[132px]">
+              <Image src={image} alt="" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover opacity-55 transition duration-700 group-hover:scale-105 group-hover:opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0a08] via-[#0b0a08]/20 to-transparent" />
+              <div className="relative flex h-full flex-col justify-between">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-white/45">{number}</span>
+                <div className="flex items-end justify-between gap-2">
+                  <span className="font-serif text-xl text-[#f3e4cc] sm:text-2xl">{label}</span>
+                  <CircleArrow />
                 </div>
-              </a>
-            ))}
-          </div>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
