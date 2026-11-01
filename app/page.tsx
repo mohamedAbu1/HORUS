@@ -17,7 +17,7 @@ import {
 const navItems = [
   { label: "Materials", href: "#materials" },
   { label: "Collections", href: "#collections" },
-  { label: "Process", href: "#process" },
+  { label: "Process", href: "/process" },
   { label: "Contact", href: "#contact" },
 ];
 
