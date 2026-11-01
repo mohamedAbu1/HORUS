@@ -764,3 +764,375 @@ select.field-input option {
     padding-top: 26px;
   }
 }
+
+/* Collections page: centered gallery grid and dark architectural framing. */
+.collections-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #090807;
+  color: #f5ebde;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.collections-nav {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid rgb(234 218 194 / 18%);
+  background: rgb(9 8 7 / 72%);
+}
+
+.collections-nav-inner {
+  display: flex;
+  height: 92px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 5vw, 84px);
+}
+
+.collections-brand {
+  display: flex;
+  flex-direction: column;
+  color: #f4ebdf;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.collections-brand-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.1vw, 31px);
+  letter-spacing: 0.24em;
+}
+
+.collections-brand-subtitle {
+  margin-top: 7px;
+  color: rgb(244 235 223 / 64%);
+  font-size: 7px;
+  letter-spacing: 0.44em;
+}
+
+.collections-desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(30px, 4.1vw, 69px);
+  margin-left: auto;
+  margin-right: clamp(28px, 8vw, 132px);
+}
+
+.collections-desktop-nav a,
+.collections-mobile-menu a {
+  position: relative;
+  color: rgb(245 235 222 / 71%);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.collections-desktop-nav a::after,
+.collections-mobile-menu a::after {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  height: 1px;
+  background: #c79e65;
+  content: "";
+  transform: scaleX(0);
+  transition: transform 180ms ease;
+}
+
+.collections-desktop-nav a:hover,
+.collections-desktop-nav a.active,
+.collections-mobile-menu a:hover,
+.collections-mobile-menu a.active {
+  color: #dfbd8a;
+}
+
+.collections-desktop-nav a:hover::after,
+.collections-desktop-nav a.active::after,
+.collections-mobile-menu a:hover::after,
+.collections-mobile-menu a.active::after {
+  transform: scaleX(1);
+}
+
+.collections-tools {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.collections-search-button,
+.collections-menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: #e2c59b;
+  transition: color 180ms ease;
+}
+
+.collections-search-button:hover,
+.collections-menu-button:hover {
+  color: #fff5e5;
+}
+
+.collections-menu-button {
+  display: none;
+}
+
+.collections-search-panel {
+  display: flex;
+  max-width: 430px;
+  align-items: center;
+  gap: 10px;
+  margin: 0 clamp(20px, 5vw, 84px) 14px auto;
+  padding: 11px 16px;
+  border: 1px solid rgb(234 218 194 / 22%);
+  background: rgb(17 14 11 / 93%);
+  color: #c69c65;
+}
+
+.collections-search-panel input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #f5ebde;
+  outline: none;
+  font-size: 12px;
+}
+
+.collections-search-panel input::placeholder {
+  color: rgb(245 235 222 / 33%);
+}
+
+.collections-search-panel span {
+  color: rgb(245 235 222 / 33%);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+}
+
+.collections-mobile-menu {
+  display: none;
+}
+
+.collections-content {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding: 151px clamp(20px, 5vw, 84px) 58px;
+  background: radial-gradient(circle at 50% 38%, rgb(38 28 20 / 23%), transparent 47%), #090807;
+}
+
+.collections-heading {
+  text-align: center;
+}
+
+.collections-heading h1 {
+  margin: 0;
+  color: #f3dfc6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(56px, 6vw, 92px);
+  font-weight: 400;
+  letter-spacing: 0.045em;
+  line-height: 0.94;
+}
+
+.collections-heading p {
+  margin: 19px 0 0;
+  color: #f0dfca;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(19px, 1.75vw, 27px);
+}
+
+.collections-card-grid {
+  display: grid;
+  width: min(100%, 1170px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  margin-top: 44px;
+}
+
+.collections-card {
+  position: relative;
+  height: clamp(420px, 37vw, 555px);
+  overflow: hidden;
+  border: 1px solid rgb(202 165 109 / 42%);
+  background: #18120e;
+  text-decoration: none;
+}
+
+.collections-card-image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 800ms ease;
+}
+
+.collections-card:hover .collections-card-image {
+  transform: scale(1.045);
+}
+
+.collections-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgb(7 6 5 / 11%) 52%, rgb(7 6 5 / 91%) 100%);
+}
+
+.collections-card-copy {
+  position: absolute;
+  right: 32px;
+  bottom: 33px;
+  left: 32px;
+}
+
+.collections-card-copy h2 {
+  margin: 0;
+  color: #f5ebde;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(20px, 1.8vw, 29px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.collections-card-rule {
+  display: block;
+  width: 29px;
+  height: 1px;
+  margin: 14px 0 12px;
+  background: #caa56d;
+}
+
+.collections-card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #dfc199;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+.collections-card-cta span {
+  font-size: 19px;
+  transition: transform 180ms ease;
+}
+
+.collections-card:hover .collections-card-cta span {
+  transform: translateX(5px);
+}
+
+.collections-project-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 23px;
+  margin-top: 22px;
+  padding: 12px 24px;
+  border: 1px solid #c49b63;
+  color: #e3c79e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.collections-project-button span {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 180ms ease;
+}
+
+.collections-project-button:hover {
+  background: #c49b63;
+  color: #18120e;
+}
+
+.collections-project-button:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 960px) {
+  .collections-desktop-nav {
+    gap: 27px;
+    margin-right: 45px;
+  }
+
+  .collections-desktop-nav a {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 760px) {
+  .collections-nav-inner {
+    height: 76px;
+  }
+
+  .collections-desktop-nav {
+    display: none;
+  }
+
+  .collections-menu-button {
+    display: inline-flex;
+  }
+
+  .collections-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid rgb(234 218 194 / 17%);
+    background: rgb(9 8 7 / 96%);
+    padding: 8px 20px 16px;
+  }
+
+  .collections-mobile-menu a {
+    padding: 14px 0;
+    border-bottom: 1px solid rgb(234 218 194 / 12%);
+  }
+
+  .collections-content {
+    padding-top: 130px;
+  }
+
+  .collections-card-grid {
+    grid-template-columns: 1fr;
+    width: min(100%, 470px);
+    gap: 13px;
+    margin-top: 34px;
+  }
+
+  .collections-card {
+    height: 380px;
+  }
+
+  .collections-card-copy {
+    right: 24px;
+    bottom: 25px;
+    left: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .collections-brand-name {
+    font-size: 20px;
+  }
+
+  .collections-brand-subtitle {
+    font-size: 6px;
+  }
+
+  .collections-heading h1 {
+    font-size: 47px;
+  }
+
+  .collections-heading p {
+    font-size: 18px;
+  }
+
+  .collections-card {
+    height: 335px;
+  }
+}
