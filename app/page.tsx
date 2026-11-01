@@ -55,7 +55,7 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[#0b0a08] text-[#f7f0e7] selection:bg-[#caa56d] selection:text-[#1c1610]">
       <SiteHeader active="home" />
 
-      <section id="top" className="relative isolate min-h-[760px] overflow-hidden pt-[78px] lg:min-h-screen">
+      <section id="top" className="relative min-h-[760px] overflow-hidden pt-[78px] lg:min-h-screen">
         <Image src="/images/hero-atelier-background.png" alt="The dark Horus alabaster atelier" fill priority sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 -z-0 bg-[linear-gradient(90deg,rgba(7,6,5,.94)_0%,rgba(7,6,5,.7)_33%,rgba(7,6,5,.15)_68%,rgba(7,6,5,.5)_100%)]" />
         <div className="hero-monolith-wrap" aria-hidden="true">
