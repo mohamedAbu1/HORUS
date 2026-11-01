@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
 
@@ -36,7 +35,7 @@ export default function CollectionsPage() {
 
         <div className="collections-card-grid">
           {collections.map((collection) => (
-            <Link href="/contact" key={collection.title} className="collections-card">
+            <a href="/contact" key={collection.title} className="collections-card">
               <Image src={collection.image} alt={collection.alt} fill sizes="(max-width: 760px) 100vw, 33vw" className="collections-card-image" />
               <div className="collections-card-overlay" />
               <div className="collections-card-copy">
@@ -44,11 +43,11 @@ export default function CollectionsPage() {
                 <span className="collections-card-rule" />
                 <span className="collections-card-cta">Explore collection <span>→</span></span>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 
-        <Link href="/contact" className="collections-project-button">Start a project <span>→</span></Link>
+        <a href="/contact" className="collections-project-button">Start a project <span>→</span></a>
       </section>
       <SiteFooter />
     </main>

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 
@@ -26,16 +25,18 @@ export function SiteHeader({ active = "home" }: { active?: SiteSection }) {
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <Link href="/" className="site-brand" aria-label="Horus home">
+        {/* Native anchors keep navigation reliable in the current Vinext runtime. */}
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a href="/" className="site-brand" aria-label="Horus home">
           <span className="site-brand-name">HORUS</span>
           <span className="site-brand-subtitle">ALABASTER ATELIER</span>
-        </Link>
+        </a>
 
         <nav className="site-desktop-nav" aria-label="Main navigation">
           {navItems.map((item) => (
-            <Link key={item.key} href={item.href} className={active === item.key ? "active" : ""}>
+            <a key={item.key} href={item.href} className={active === item.key ? "active" : ""}>
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -43,7 +44,7 @@ export function SiteHeader({ active = "home" }: { active?: SiteSection }) {
           <button type="button" className="site-search-button" onClick={() => setSearchOpen((value) => !value)} aria-label="Toggle search">
             <Search size={18} strokeWidth={1.25} />
           </button>
-          <Link href="/contact" className="site-contact-dot" aria-label="Open contact page"><span>o</span></Link>
+          <a href="/contact" className="site-contact-dot" aria-label="Open contact page"><span>o</span></a>
           <button type="button" className="site-menu-button" onClick={() => setMenuOpen((value) => !value)} aria-label="Toggle menu">
             {menuOpen ? <X size={20} strokeWidth={1.2} /> : <Menu size={20} strokeWidth={1.2} />}
           </button>
@@ -61,9 +62,9 @@ export function SiteHeader({ active = "home" }: { active?: SiteSection }) {
       {menuOpen && (
         <nav className="site-mobile-menu" aria-label="Mobile navigation">
           {navItems.map((item) => (
-            <Link key={item.key} href={item.href} onClick={closeMenu} className={active === item.key ? "active" : ""}>
+            <a key={item.key} href={item.href} onClick={closeMenu} className={active === item.key ? "active" : ""}>
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
       )}
